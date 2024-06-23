@@ -10,7 +10,7 @@ import numpy as np
 
 
 target_array = np.array(['setosa', 'versicolor', 'virginica'])
-st.set_page_config(layout='wide',page_title="iris flower classification",page_icon='D:\\Machine_learning\\log_img\\logo.jpeg')
+st.set_page_config(layout='wide',page_title="iris flower classification",page_icon='logo.jpeg')
 
 st.markdown("<h1 style='text-align: center; color: #5A4FCF;'>classification of iris flower species</h1>", unsafe_allow_html=True)
 
@@ -21,13 +21,13 @@ col2.subheader('Key Details:')
 col2.subheader('Iris flowers have three species: setosa, versicolor, and virginica.')
 col2.subheader('These species can be distinguished based on measurements such as sepal length, sepal width, petal length, and petal width.')
 
-df = pd.read_csv("log_img//df.csv")
+df = pd.read_csv("df.csv")
 df.drop(df.columns[0],axis='columns',inplace=True)
 
 st.markdown("<h1 style='text-align: center; color: #5A4FCF;'>Dataset Structure</h1>", unsafe_allow_html=True)
 st.table(df.head())
 
-model = joblib.load("log_img//model.joblib")
+model = joblib.load("model.joblib")
 plt.title("Confusion matrix heat map representation")
 
 x_train, x_test, y_train, y_test = train_test_split(df.drop(['target'],axis='columns'),df['target'],test_size=0.2,random_state=10)
