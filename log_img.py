@@ -47,6 +47,7 @@ ax.set_ylabel('True labels')
 # Display the heatmap in Streamlit
 co1.markdown("<h1 style='text-align: center; color: #5A4FCF;'>Confusion Matrix</h1>", unsafe_allow_html=True)
 co1.pyplot(fig)
+co1.subheader("Accuracy :"+str(model.score(x_test,y_test)))
 
 co2.markdown("<h1 style='text-align: center; color: #5A4FCF;'>Model Prediction</h1>", unsafe_allow_html=True)
 
